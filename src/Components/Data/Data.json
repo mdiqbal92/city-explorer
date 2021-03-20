@@ -1,0 +1,20 @@
+[{
+    "id": 1,
+    "rideType": "Bike",
+    "imageURL": "https://i.ibb.co/qBtnGN6/Frame.png"
+}, {
+    "id": 1,
+    "rideType": "Car",
+    "imageURL": "https://i.ibb.co/wWGDk2m/Frame-2.png"
+
+}, {
+    "id": 1,
+    "rideType": "Bus",
+    "imageURL": "https://i.ibb.co/ZdCPgr8/Frame-1.png"
+
+}, {
+    "id": 1,
+    "rideType": "Metro",
+    "imageURL": "https://i.ibb.co/MMWwCFb/Group.png"
+
+}]

@@ -16,6 +16,7 @@ const LogIn = () => {
     });
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     console.log(loggedInUser);
+
     const history = useHistory();
     const location = useLocation();
     let { from } = location.state || { from: { pathname: "/" } };
@@ -25,22 +26,25 @@ const LogIn = () => {
         }
         const handleGoogleLogIn = () => {
             var provider = new firebase.auth.GoogleAuthProvider();
-
             firebase.auth().signInWithPopup(provider)
-                .then((result) => {
-                    const { displayName, email } = result.user;
-                    const user = result.user;
+                .then(res => {
+                    const { displayName, email } = res.user;
+                    const user = res.user;
                     const signedInUser = {
                         isSignedIn: true,
                         name: displayName,
-                        email: email
+                        email: email,
+                        success: true
                     }
-
                     console.log(user, displayName);
                     setUser(signedInUser);
-                }).catch((error) => {
-                    const errorMessage = error.message;
-                    console.log(errorMessage);
+                    history.replace(from);
+                })
+                .catch((error) => {
+                    const newUser = { ...user }
+                        newUser.error = error.message;
+                        newUser.success = false;
+                        setUser(newUser);
                 });
         }
         const handleSignOut = () => {
@@ -67,8 +71,8 @@ const LogIn = () => {
                         const newUser = { ...user }
                         newUser.error = '';
                         newUser.success = true;
-
                         console.log(res);
+                        
                     })
                     .catch((error) => {
                         const newUser = { ...user }
