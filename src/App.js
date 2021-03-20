@@ -11,7 +11,7 @@ import Home from './Components/Home/Home';
 import NotFound from './Components/NotFound/NotFound';
 import LogIn from "./Components/LogIn/LogIn";
 import Destination from "./Components/Destination/Destination";
-
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 
 
 export const UserContext = createContext();
@@ -26,16 +26,15 @@ function App() {
         <Route exact path = "/">
         <Home></Home>
         </Route>
-        
         <Route path = "/home">
         <Home></Home>
         </Route>
         <Route path="/login">
         <LogIn></LogIn>
         </Route>
-        <Route path="/destination">
+        <PrivateRoute path="/destination">
         <Destination></Destination>
-        </Route>
+        </PrivateRoute>
         
         <Route path = "*">
         <NotFound></NotFound>
