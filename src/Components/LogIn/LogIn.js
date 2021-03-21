@@ -38,6 +38,7 @@ const LogIn = () => {
                     }
                     console.log(user, displayName);
                     setUser(signedInUser);
+                    setLoggedInUser(signedInUser);
                     history.replace(from);
                 })
                 .catch((error) => {

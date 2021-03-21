@@ -1,17 +1,24 @@
-import React, {} from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
+import {SearchContext} from '../../App'
 
 
 const Rides = (props) => {
-    const { imageURL, id } = props.ride;
+    const { imageURL } = props.ride;
+    const history = useHistory();
+    const [search, setSearch] = useContext(SearchContext)
+    setSearch(props.ride);
+
+    const handleRide = () =>{
+        history.push('/destination')
+        setSearch(props.ride);
+    }
 
     return (
-        <div style={{marginTop:'100px'}} className="col-md-3 container-fluid">
-            <Link to={`/destination/${id}`}>
-            <div style={{padding:'30px', boxShadow:'8', marginTop:'10px'}} class="card shadow p-3 mb-5 bg-body rounded">
+        <div style={{marginTop:'10px'}} className="col-md-3 container-fluid">
+            <div onClick= {handleRide} style={{padding:'30px', boxShadow:'8'}} class="card shadow p-3 mb-5 bg-body rounded">
                 <img src={imageURL} class="card-img-top" alt="..."/>
             </div>
-            </Link>
         </div>
     );
 };

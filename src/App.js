@@ -36,13 +36,12 @@ function App() {
         <Route path="/login">
         <LogIn></LogIn>
         </Route>
-        <PrivateRoute path="/destination/:id">
+        <PrivateRoute path="/destination">
         <Destination></Destination>
         </PrivateRoute>
-        <Route path="/search-result/:id">
+        <Route path="/search-result">
           <SearchResult></SearchResult>
         </Route>
-        
         <Route path = "*">
         <NotFound></NotFound>
         </Route>
