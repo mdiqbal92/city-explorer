@@ -1,5 +1,10 @@
-# Getting Started with Create React App
+Hello Guys,
+Hope you are coding well. 
+This is a simple city explorer app. You can select your ride from various options like bike, car, bus etc.
+Before using the service you need to create an account first. you can simply log in with your google account or create account using your email.
+Check out the app live here: https://city-explorer-d3b91.web.app/home
 
+<<<<<<< HEAD
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -70,3 +75,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 # react-auth-mdiqbal92
 # authentication
+=======
+Thanks for visit.
+>>>>>>> b33a477d2996ae3fc896eb3800140d8d6fa41a34
