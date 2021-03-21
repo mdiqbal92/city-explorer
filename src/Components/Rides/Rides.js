@@ -1,27 +1,18 @@
-import React, { useContext } from 'react';
-import { useHistory, useLocation } from 'react-router';
+import React, {} from 'react';
 import { Link } from 'react-router-dom';
-import { UserContext } from '../../App';
+
 
 const Rides = (props) => {
-    const { imageURL, rideType, id } = props.ride;
-
-
+    const { imageURL, id } = props.ride;
 
     return (
-        
-        <div className="col-md-3 container-fluid">
+        <div style={{marginTop:'100px'}} className="col-md-3 container-fluid">
             <Link to={`/destination/${id}`}>
-            <div class="card">
+            <div style={{padding:'30px', boxShadow:'8', marginTop:'10px'}} class="card shadow p-3 mb-5 bg-body rounded">
                 <img src={imageURL} class="card-img-top" alt="..."/>
-                    <div class="card-body">
-                        <h5 class="card-title">{rideType}</h5>
-                    </div>
             </div>
             </Link>
         </div>
-        
-        
     );
 };
 

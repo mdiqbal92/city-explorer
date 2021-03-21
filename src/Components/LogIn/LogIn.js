@@ -133,7 +133,9 @@ const LogIn = () => {
                 <form onSubmit={handleSubmit}>
                     {newUser && <input type="text" name="name" placeholder="Name" onBlur={handleBlur} required />}<br />
                     <input type="email" name="email" placeholder="Your Email" onBlur={handleBlur} required /><br />
-                    <input type="text" name="password" placeholder="Type password" onBlur={handleBlur} required /><br />
+                    <label htmlFor="email">Enter a valid email address</label><br/>
+                    <input type="text" name="password" placeholder="Password)" onBlur={handleBlur} required /><br />
+                    <label htmlFor="password">min 6 characters with 1 uppercase and 1 number</label><br/>
                     {newUser && <input type="password" name="confirm-password" placeholder="Confirm password" onBlur={handleBlur} required />}<br /><br />
                     <input className="btn btn-success" type="submit" value="Submit" /><br />
                 </form>

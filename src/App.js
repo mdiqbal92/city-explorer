@@ -12,14 +12,18 @@ import NotFound from './Components/NotFound/NotFound';
 import LogIn from "./Components/LogIn/LogIn";
 import Destination from "./Components/Destination/Destination";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
+import SearchResult from "./Components/SearchResult/SearchResult";
 
 
 export const UserContext = createContext();
+export const SearchContext = createContext()
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
+  const [search, setSearch] = useState({});
   return (
     <UserContext.Provider value= {[loggedInUser, setLoggedInUser]}>
+      <SearchContext.Provider value = {[search, setSearch]}>
     <Router>
       <Header></Header>
       <Switch>
@@ -35,12 +39,16 @@ function App() {
         <PrivateRoute path="/destination/:id">
         <Destination></Destination>
         </PrivateRoute>
+        <Route path="/search-result/:id">
+          <SearchResult></SearchResult>
+        </Route>
         
         <Route path = "*">
         <NotFound></NotFound>
         </Route>
       </Switch>
     </Router>
+    </SearchContext.Provider>
     </UserContext.Provider>
   );
 }
